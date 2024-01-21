@@ -43,7 +43,7 @@ export class Header extends ElementBase {
                 opacity: [1, 1]
             }, {
                 duration: .5,
-                delay: 0,
+                delay: .1,
                 easing: glide({ velocity: 10 }),
             })
         })
@@ -67,7 +67,7 @@ export class Header extends ElementBase {
                 opacity: [1, 1]
             }, {
                 duration: .5,
-                delay: 0,
+                delay: .1,
                 easing: glide({ velocity: 10 }),
             })
         })

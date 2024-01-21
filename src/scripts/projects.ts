@@ -1,6 +1,5 @@
-import { ValueKeyframesDefinition, animate, glide, inView, scroll, spring, stagger, timeline } from "motion"
+import { ValueKeyframesDefinition, animate, glide, inView, scroll, spring, timeline } from "motion"
 import { ElementBase } from "./base"
-import SplitType from "split-type"
 
 export class Projects extends ElementBase {
     constructor(readonly selector: string) {

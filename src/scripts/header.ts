@@ -25,11 +25,11 @@ export class Header extends ElementBase {
 
     private subscribe() {
         this.$('#me').addEventListener('click', async () => {
-            await animate(this.$('.jumper', document), {
+            const jumper = this.$('.jumper', document)
+            await animate(jumper, {
                 transform: ['translateX(100%) scaleX(0)', 'translateX(0) scaleX(1)'],
                 opacity: [1, 1]
             }, {
-                duration: .5,
                 easing: glide({ velocity: 10 }),
             }).finished
 
@@ -38,12 +38,10 @@ export class Header extends ElementBase {
                 block: 'start'
             })
 
-            animate(this.$('.jumper', document), {
-                transform: ['translateX(0%) scaleX(1)', 'translateX(-100%) scaleX(0)'],
+            animate(jumper, {
+                transform: ['translateX(0) scaleX(1)', 'translateX(-100%) scaleX(0)'],
                 opacity: [1, 1]
             }, {
-                duration: .5,
-                delay: .1,
                 easing: glide({ velocity: 10 }),
             })
         })
@@ -53,7 +51,6 @@ export class Header extends ElementBase {
                 transform: ['translateX(-100%) scaleX(0)', 'translateX(0) scaleX(1)'],
                 opacity: [1, 1]
             }, {
-                duration: .5,
                 easing: glide({ velocity: 10 }),
             }).finished
 
@@ -66,8 +63,6 @@ export class Header extends ElementBase {
                 transform: ['translateX(0) scaleX(1)', 'translateX(100%) scaleX(0)'],
                 opacity: [1, 1]
             }, {
-                duration: .5,
-                delay: .1,
                 easing: glide({ velocity: 10 }),
             })
         })

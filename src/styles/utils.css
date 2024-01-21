@@ -107,12 +107,11 @@ section {
 
 .jumper {
     position: fixed;
+    isolation: isolate;
     z-index: 999;
-    top: 0; bottom: 0;
-    left: 0; right: 0;
+    inset: 0;
     pointer-events: none;
-    opacity: 0;
-    transform: translateY(-100%) scaleX(0);
+    transform: translateY(-100%);
 
     /* background-color: var(--bg-accent-color); */
 

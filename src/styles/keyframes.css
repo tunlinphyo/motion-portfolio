@@ -1,0 +1,9 @@
+@keyframes underline {
+  from {
+      background-size: 0% 2px;
+  }
+  to {
+      background-size: 100% 2px;
+  }
+}
+

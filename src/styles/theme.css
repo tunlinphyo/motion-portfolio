@@ -1,0 +1,33 @@
+:root {
+    color-scheme: light dark;
+
+    --bg-color: #FFF;
+    --bg-header: #FFFB;
+    --bg-accent-color: #F5F5F5;
+    --bg-dark-color: #F5F5F5;
+    --bg-button: #EEEB;
+
+    --fg-color: #000;
+    --fg-accent-color: #333;
+
+    --border-color: #EEE;
+    --swatch: #EEE;
+
+    --accent-color: hsl(204, 70%, 53%);
+
+    @media (prefers-color-scheme: dark) {
+        --bg-color: #222;
+        --bg-header: #222B;
+        --bg-accent-color: #272727;
+        --bg-dark-color: #181818;
+        --bg-button: #333B;
+
+        --fg-color: #DDD;
+        --fg-accent-color: #AAA;
+
+        --border-color: #111;
+        --swatch: #333;
+
+        --accent-color: hsl(204, 70%, 70%);
+    }
+}

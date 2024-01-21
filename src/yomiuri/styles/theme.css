@@ -1,0 +1,21 @@
+:root {
+    color-scheme: light dark;
+
+    --bg-color: #FFF;
+    --bg-accent-color: #EEE;
+
+    --fg-color: #000;
+    --fg-accent-color: #95a5a6;
+
+    --accent-color: hsl(204, 70%, 53%);
+
+    @media (prefers-color-scheme: dark) {
+        --bg-color: #222;
+        --bg-accent-color: #090909;
+
+        --fg-color: #DDD;
+        --fg-accent-color: #666;
+
+        --accent-color: hsl(204, 70%, 70%);
+    }
+}

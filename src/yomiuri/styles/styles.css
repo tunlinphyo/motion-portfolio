@@ -1,0 +1,209 @@
+.yomi-main {
+    --gap: 10px;
+    --border-radius: 10px;
+
+    inline-size: 100%;
+
+    background-color: var(--bg-accent-color);
+
+    @media (min-width: 768px) {
+        block-size: 500vh;
+        --gap: 15px;
+    }
+
+    @media (min-width: 1280px) {
+        --gap: 20px;
+        --border-radius: 15px;
+    }
+
+    & p {
+        max-width: 500px;
+    }
+
+    .scroll-container {
+        inline-size: 100%;
+
+        @media (min-width: 768px) {
+            block-size: 100vh;
+            overflow: hidden;
+
+            position: sticky;
+            top: 0;
+        }
+
+
+        .flex-container {
+            inline-size: 100%;
+            block-size: 100%;
+
+            background-color: var(--bg-accent-color);
+
+            @media (min-width: 768px) {
+                display: flex;
+                white-space: nowrap;
+                gap: var(--gap);
+                padding: var(--gap);
+            }
+
+
+            > section {
+                inline-size: 100%;
+                aspect-ratio: 3 / 4;
+
+                @media (max-width: 767px) {
+                    margin-top: var(--gap);
+                }
+                @media (min-width: 768px) {
+                    block-size: calc(100vh - (var(--gap) * 2));
+                    min-inline-size: initial;
+                    aspect-ratio: 1 / 1;
+                }
+
+                .container {
+                    inline-size: 100%;
+                    block-size: 100%;
+                    padding: 0;
+                    overflow: hidden;
+                    position: relative;
+                    white-space: normal;
+                    border-radius: var(--border-radius);
+                    background-color: var(--bg-color);
+                }
+
+                &.intro {
+                    inline-size: 100%;
+
+                    @media (max-width: 767px) {
+                        margin-top: 0;
+                    }
+
+                    .container {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: flex-start;
+                        padding: var(--x);
+                        gap: var(--gap);
+
+                        @media (max-width: 767px) {
+                            justify-content: flex-end;
+                            padding-bottom: 10vh;
+                        }
+
+                        > h1 {
+                            width: min-content;
+                            font-size: clamp(3rem, 10vw, 7rem);
+                            font-weight: 800;
+                            white-space: initial;
+                            line-height: 1.1;
+                        }
+                    }
+                }
+
+                &.shops {
+                    background-color: transparent;
+
+                    .container {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: var(--gap);
+                        background-color: transparent;
+
+                        @media (max-width: 767px) {
+                            grid-template-columns: minmax(0, 1fr);
+                            grid-template-rows: repeat(3, 1fr);
+                        }
+
+                        .col {
+                            height: 160vh;
+                            display: grid;
+                            grid-template-columns: minmax(0, 1fr);
+                            grid-template-rows: repeat(4, minmax(0, 1fr));
+                            gap: var(--gap);
+
+                            @media (max-width: 767px) {
+                                height: initial;
+                                width: 160vw;
+                                grid-template-rows: minmax(0, 1fr);
+                                grid-template-columns: repeat(4, minmax(0, 1fr));
+                            }
+
+                            .row {
+                                background-color: var(--bg-color);
+                                border-radius: var(--border-radius);
+                                overflow: hidden;
+
+                                > img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                    opacity: .9;
+
+                                    transition: opacity .3s ease;
+
+                                    @media (prefers-color-scheme: dark) {
+                                        opacity: .7;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.site {
+                    aspect-ratio: 1 / 1;
+
+                    .container {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: stretch;
+                        padding: var(--x);
+
+                        .no {
+                            font-size: clamp(2rem, 8vw, 5rem);
+                            color: var(--fg-accent-color);
+                            line-height: 1;
+                        }
+
+                        .section {
+                            > h2 {
+                                font-size: clamp(2rem, 10vw, 5rem);
+                                line-height: 1.2;
+                                font-weight: 800;
+
+                                > span {
+                                    display: block;
+                                }
+                            }
+
+                            > p {
+                                margin-top: .5em;
+                            }
+                        }
+
+                        .yomi-footer {
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: flex-end;
+
+                            > a {
+                                color: var(--fg-accent-color);
+                                text-decoration: none;
+
+                                &.disabled {
+                                    pointer-events: none;
+                                    opacity: .3;
+                                }
+
+                                @media (max-width: 767px) {
+                                    font-size: .9rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
